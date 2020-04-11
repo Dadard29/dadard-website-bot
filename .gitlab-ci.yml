@@ -13,7 +13,6 @@ build:
     - echo "registering with $REGISTRY_USERNAME $REGISTRY_PASSWORD"
     - echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USERNAME --password-stdin registry.gitlab.com
     - docker build -t $IMAGE_NAME --build-arg ARG_BOT_TOKEN=$ARG_BOT_TOKEN .
-    - docker run --rm $IMAGE_NAME go test -v ./...
     - docker push $IMAGE_NAME
 
 deploy:
