@@ -4,6 +4,8 @@ ARG ARG_BOT_TOKEN
 
 ENV BOT_TOKEN=$ARG_BOT_TOKEN
 
+RUN apk add --update git gcc libc-dev
+
 WORKDIR /go/src/app
 COPY . .
 
