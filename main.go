@@ -3,6 +3,7 @@ package main
 import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
+	"os"
 )
 
 var inputMapping = map[string]func(u tgbotapi.Update) string {
@@ -12,7 +13,8 @@ var inputMapping = map[string]func(u tgbotapi.Update) string {
 }
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("1271254438:AAF13Fy5M8wYxvrKx-UkZNMOMJmHGYhpO0Q")
+	botToken := os.Getenv("BOT_TOKEN")
+	bot, err := tgbotapi.NewBotAPI(botToken)
 	if err != nil {
 		log.Panic(err)
 	}

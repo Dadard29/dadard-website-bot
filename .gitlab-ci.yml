@@ -7,8 +7,6 @@ services:
   - docker:dind
 
 build:
-  only:
-    - tags
   stage: build
   script:
     - docker info
@@ -19,8 +17,6 @@ build:
     - docker push $IMAGE_NAME
 
 deploy:
-  only:
-    - tags
   stage: deploy
   script:
     - apk add --update curl wget
