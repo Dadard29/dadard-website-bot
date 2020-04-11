@@ -1,0 +1,5 @@
+FROM golang:1.13-alpine
+
+ARG ARG_BOT_TOKEN
+
+ENV BOT_TOKEN=$ARG_BOT_TOKEN
